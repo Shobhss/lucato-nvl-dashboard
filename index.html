@@ -22,7 +22,6 @@
       --accent-amber: #d97706;
       --accent-amber-light: #fef3c7;
       --radius: 12px;
-      --radius-sm: 8px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -47,179 +46,109 @@
       border-bottom: 2px solid var(--text-primary);
       padding-bottom: 16px;
     }
-    .header h1 {
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
+    .header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
     .header h1 span { color: var(--accent-blue); }
-    .header p {
-      color: var(--text-secondary);
-      font-size: 13px;
-      margin-top: 4px;
-    }
+    .header p { color: var(--text-secondary); font-size: 13px; margin-top: 4px; }
     .header-right {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--text-muted);
-      font-weight: 500;
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--text-muted); font-weight: 500;
     }
     .pulse-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
+      width: 7px; height: 7px; border-radius: 50%;
       background: var(--accent-green);
       animation: pulse 2s ease-in-out infinite;
     }
-    @keyframes pulse {
-      0%,100% { opacity:1; } 50% { opacity:0.3; }
-    }
-    .stat-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 36px;
-    }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+    .stat-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 36px; }
     .stat-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px 24px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 22px 24px;
       border-top: 3px solid transparent;
     }
     .stat-card:nth-child(1) { border-top-color: var(--accent-blue); }
     .stat-card:nth-child(2) { border-top-color: var(--accent-green); }
     .stat-card:nth-child(3) { border-top-color: var(--accent-amber); }
     .stat-label {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--text-muted);
-      margin-bottom: 6px;
+      font-size: 11px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--text-muted); margin-bottom: 6px;
     }
     .stat-value {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 34px;
-      font-weight: 600;
-      margin-bottom: 6px;
+      font-size: 34px; font-weight: 600; margin-bottom: 6px;
     }
     .stat-card:nth-child(1) .stat-value { color: var(--accent-blue); }
     .stat-card:nth-child(2) .stat-value { color: var(--accent-green); }
     .stat-card:nth-child(3) .stat-value { color: var(--accent-amber); }
     .stat-change {
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 2px 7px;
-      border-radius: 4px;
-      color: var(--accent-green);
-      background: var(--accent-green-light);
+      display: inline-flex; align-items: center; gap: 3px;
+      font-size: 12px; font-weight: 600; padding: 2px 7px; border-radius: 4px;
+      color: var(--accent-green); background: var(--accent-green-light);
     }
-    .stat-sub {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
+    .stat-sub { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
     .chart-panel {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px 28px;
-      margin-bottom: 20px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 28px; margin-bottom: 20px;
     }
     .chart-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;
     }
     .chart-title { font-size: 15px; font-weight: 600; }
     .chart-badge {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      padding: 3px 8px;
-      border-radius: 4px;
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.6px; padding: 3px 8px; border-radius: 4px;
     }
     .badge-blue { color: var(--accent-blue); background: var(--accent-blue-light); }
     .badge-green { color: var(--accent-green); background: var(--accent-green-light); }
     .badge-amber { color: var(--accent-amber); background: var(--accent-amber-light); }
     .chart-svg { width: 100%; height: auto; display: block; }
-    .annotations {
-      margin-top: 14px;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
+
+    .legend {
+      margin-top: 14px; display: flex; gap: 20px; flex-wrap: wrap;
     }
-    .annotation {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 11px;
-      color: var(--text-secondary);
+    .legend-item {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 11px; color: var(--text-secondary);
     }
-    .annotation-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      flex-shrink: 0;
+    .legend-swatch {
+      width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0;
     }
+
     .table-panel {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-top: 16px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden; margin-top: 16px;
     }
     .table-header-bar {
-      padding: 18px 24px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      padding: 18px 24px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
     }
     .table-header-bar h3 { font-size: 15px; font-weight: 600; }
     table { width: 100%; border-collapse: collapse; }
     thead th {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      color: var(--text-muted);
-      padding: 12px 16px;
-      text-align: right;
-      border-bottom: 1px solid var(--border);
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.6px; color: var(--text-muted); padding: 12px 16px;
+      text-align: right; border-bottom: 1px solid var(--border);
       background: var(--surface-2);
     }
     thead th:first-child { text-align: left; padding-left: 24px; }
     tbody td {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      padding: 11px 16px;
-      text-align: right;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-secondary);
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      padding: 11px 16px; text-align: right;
+      border-bottom: 1px solid var(--border); color: var(--text-secondary);
     }
     tbody td:first-child {
-      text-align: left;
-      padding-left: 24px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 500;
+      text-align: left; padding-left: 24px;
+      font-family: 'DM Sans', sans-serif; font-weight: 500;
       color: var(--text-primary);
     }
     tbody tr:last-child td { border-bottom: none; }
     tbody tr:hover { background: var(--surface-2); }
     .trend-up { color: var(--accent-green); font-weight: 600; }
-    .highlight-row td { background: var(--accent-blue-light); }
+    .projected-row td { color: var(--text-muted); font-style: italic; }
+    .projected-row td:first-child::after { content: ' *'; color: var(--text-muted); }
     .footer {
-      margin-top: 40px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 11px;
+      margin-top: 40px; text-align: center; color: var(--text-muted); font-size: 11px;
     }
     @media (max-width: 768px) {
       .stat-cards { grid-template-columns: 1fr; }
@@ -238,7 +167,7 @@
     </div>
     <div class="header-right">
       <div class="pulse-dot"></div>
-      Updated Wk10 · Apr 21
+      Updated Wk9 · Apr 14
     </div>
   </div>
 
@@ -269,10 +198,7 @@
       <span class="chart-badge badge-blue">Leading · Pipeline</span>
     </div>
     <div id="chart-demos"></div>
-    <div class="annotations">
-      <div class="annotation"><div class="annotation-dot" style="background:#2563eb"></div>Wk3: First cold outreach batch → demo spike</div>
-      <div class="annotation"><div class="annotation-dot" style="background:#8b5cf6"></div>Wk7: Kellogg alumni referrals started converting</div>
-    </div>
+    <div class="legend" id="legend-demos"></div>
   </div>
 
   <div class="chart-panel">
@@ -281,9 +207,7 @@
       <span class="chart-badge badge-green">Leading · Operational Input</span>
     </div>
     <div id="chart-content"></div>
-    <div class="annotations">
-      <div class="annotation"><div class="annotation-dot" style="background:#059669"></div>Includes landing pages, blogs, schema updates, citation posts</div>
-    </div>
+    <div class="legend" id="legend-content"></div>
   </div>
 
   <div class="chart-panel">
@@ -292,15 +216,13 @@
       <span class="chart-badge badge-amber">Client Outcome</span>
     </div>
     <div id="chart-leads"></div>
-    <div class="annotations">
-      <div class="annotation"><div class="annotation-dot" style="background:#d97706"></div>Wk5: AtoZ Insurance 3x traffic spike → lead surge</div>
-    </div>
+    <div class="legend" id="legend-leads"></div>
   </div>
 
   <div class="table-panel">
     <div class="table-header-bar">
       <h3>Weekly Breakdown</h3>
-      <span style="font-size:11px;color:var(--text-muted);">Actuals · 10 weeks</span>
+      <span style="font-size:11px;color:var(--text-muted);">* Projected</span>
     </div>
     <div style="overflow-x:auto;">
       <table>
@@ -308,7 +230,6 @@
           <tr>
             <th>Week</th>
             <th>Demos</th>
-            <th>Cum. Demos</th>
             <th>Content Assets</th>
             <th>WoW %</th>
             <th>Leads</th>
@@ -324,103 +245,101 @@
 </div>
 
 <script>
+  // ── DATA ──
   var labels = ['Feb 17','Feb 24','Mar 3','Mar 10','Mar 17','Mar 24','Mar 31','Apr 7','Apr 14','Apr 21'];
-  var demosBooked   = [2, 3, 5, 4, 7, 6, 9, 8, 11, 13];
-  var contentAssets  = [6, 8, 14, 18, 24, 32, 45, 56, 72, 87];
-  var leadsDelivered = [0, 2, 4, 7, 14, 18, 22, 28, 32, 42];
+  var demosBooked    = [2, 3, 5, 4, 7, 6, 9, 8, 11, 13];
+  var contentAssets   = [6, 8, 14, 18, 24, 32, 45, 56, 72, 87];
+  var leadsDelivered  = [0, 2, 4, 7, 14, 18, 22, 28, 32, 42];
 
-  var last = labels.length - 1;
-  function pct(arr) {
-    if (arr[last-1] === 0) return '—';
-    return Math.round(((arr[last] - arr[last-1]) / arr[last-1]) * 100);
+  // Wk9 (Apr 14) is current week, Wk10 (Apr 21) is projected
+  var currentWeekIndex = 8; // 0-indexed, Apr 14
+
+  var last = currentWeekIndex;
+  function pct(arr, idx) {
+    if (arr[idx-1] === 0) return '\u2014';
+    return Math.round(((arr[idx] - arr[idx-1]) / arr[idx-1]) * 100);
   }
-  function sum(arr) { var s=0; for(var i=0;i<arr.length;i++) s+=arr[i]; return s; }
 
   document.getElementById('stat-demos').textContent = demosBooked[last];
-  document.getElementById('stat-demos-change').textContent = '\u2191 ' + pct(demosBooked) + '% vs last week';
-  document.getElementById('stat-demos-sub').textContent = sum(demosBooked) + ' cumulative demos';
+  document.getElementById('stat-demos-change').textContent = '\u2191 ' + pct(demosBooked, last) + '% vs last week';
+  document.getElementById('stat-demos-sub').textContent = 'Current week (Apr 14)';
 
   document.getElementById('stat-content').textContent = contentAssets[last];
-  document.getElementById('stat-content-change').textContent = '\u2191 ' + pct(contentAssets) + '% vs last week';
-  document.getElementById('stat-content-sub').textContent = (contentAssets[last] / 10).toFixed(1) + ' avg per client';
+  document.getElementById('stat-content-change').textContent = '\u2191 ' + pct(contentAssets, last) + '% vs last week';
+  document.getElementById('stat-content-sub').textContent = 'Current week (Apr 14)';
 
   document.getElementById('stat-leads').textContent = leadsDelivered[last];
-  document.getElementById('stat-leads-change').textContent = '\u2191 ' + pct(leadsDelivered) + '% vs last week';
-  document.getElementById('stat-leads-sub').textContent = (leadsDelivered[last] / 10).toFixed(1) + ' avg per client';
+  document.getElementById('stat-leads-change').textContent = '\u2191 ' + pct(leadsDelivered, last) + '% vs last week';
+  document.getElementById('stat-leads-sub').textContent = 'Current week (Apr 14)';
 
-  function barChart(id, data, color, colorLight) {
-    var W=900, H=220, pL=45, pR=20, pT=15, pB=40;
-    var cW=W-pL-pR, cH=H-pT-pB;
+  // ── BAR CHART BUILDER ──
+  function barChart(id, legendId, data, color, colorFaded, label) {
+    var W = 900, H = 240, pL = 45, pR = 20, pT = 20, pB = 45;
+    var cW = W - pL - pR, cH = H - pT - pB;
     var mx = Math.max.apply(null, data) * 1.2;
     var bW = cW / data.length;
     var gap = bW * 0.28;
     var svg = '';
+
+    // Y grid
     var steps = 4;
-    for (var s=0; s<=steps; s++) {
-      var y = pT + (cH/steps)*s;
-      var v = Math.round(mx - (mx/steps)*s);
-      svg += '<line x1="'+pL+'" x2="'+(W-pR)+'" y1="'+y+'" y2="'+y+'" stroke="#e5e7eb" stroke-width="1"/>';
-      svg += '<text x="'+(pL-8)+'" y="'+(y+4)+'" text-anchor="end" font-size="10" fill="#9ca3af" font-family="JetBrains Mono,monospace">'+v+'</text>';
+    for (var s = 0; s <= steps; s++) {
+      var y = pT + (cH / steps) * s;
+      var v = Math.round(mx - (mx / steps) * s);
+      svg += '<line x1="' + pL + '" x2="' + (W - pR) + '" y1="' + y + '" y2="' + y + '" stroke="#e5e7eb" stroke-width="1"/>';
+      svg += '<text x="' + (pL - 8) + '" y="' + (y + 4) + '" text-anchor="end" font-size="10" fill="#9ca3af" font-family="JetBrains Mono,monospace">' + v + '</text>';
     }
-    for (var i=0; i<data.length; i++) {
-      var x = pL + i*bW + gap/2;
+
+    // Bars
+    for (var i = 0; i < data.length; i++) {
+      var x = pL + i * bW + gap / 2;
       var w = bW - gap;
-      var h = (data[i]/mx)*cH;
+      var h = (data[i] / mx) * cH;
       var yy = pT + cH - h;
-      var fill = i===data.length-1 ? color : colorLight;
-      svg += '<rect x="'+x+'" y="'+yy+'" width="'+w+'" height="'+h+'" rx="4" fill="'+fill+'"/>';
-      svg += '<text x="'+(x+w/2)+'" y="'+(yy-6)+'" text-anchor="middle" font-size="11" font-weight="600" fill="'+color+'" font-family="JetBrains Mono,monospace">'+data[i]+'</text>';
-      svg += '<text x="'+(x+w/2)+'" y="'+(H-8)+'" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="DM Sans,sans-serif">'+labels[i]+'</text>';
+      var isProjected = i > currentWeekIndex;
+      var fill = isProjected ? colorFaded : color;
+      var textFill = isProjected ? '#9ca3af' : color;
+      var strokeDash = isProjected ? ' stroke="' + color + '" stroke-width="1.5" stroke-dasharray="4 3" fill="' + colorFaded + '"' : ' fill="' + fill + '"';
+
+      if (isProjected) {
+        svg += '<rect x="' + x + '" y="' + yy + '" width="' + w + '" height="' + h + '" rx="4"' + strokeDash + '/>';
+      } else {
+        svg += '<rect x="' + x + '" y="' + yy + '" width="' + w + '" height="' + h + '" rx="4" fill="' + fill + '"/>';
+      }
+
+      svg += '<text x="' + (x + w / 2) + '" y="' + (yy - 6) + '" text-anchor="middle" font-size="11" font-weight="600" fill="' + textFill + '" font-family="JetBrains Mono,monospace">' + data[i] + '</text>';
+      svg += '<text x="' + (x + w / 2) + '" y="' + (H - 8) + '" text-anchor="middle" font-size="10" fill="' + (isProjected ? '#c4c9d4' : '#9ca3af') + '" font-family="DM Sans,sans-serif">' + labels[i] + '</text>';
     }
-    document.getElementById(id).innerHTML = '<svg viewBox="0 0 '+W+' '+H+'" class="chart-svg">'+svg+'</svg>';
+
+    document.getElementById(id).innerHTML = '<svg viewBox="0 0 ' + W + ' ' + H + '" class="chart-svg">' + svg + '</svg>';
+
+    // Legend
+    document.getElementById(legendId).innerHTML =
+      '<div class="legend-item"><div class="legend-swatch" style="background:' + color + '"></div>Actual</div>' +
+      '<div class="legend-item"><div class="legend-swatch" style="background:' + colorFaded + ';border:1.5px dashed ' + color + '"></div>Projected</div>';
   }
 
-  function lineChart(id, data, color, fillColor) {
-    var W=900, H=220, pL=45, pR=20, pT=20, pB=40;
-    var cW=W-pL-pR, cH=H-pT-pB;
-    var mx = Math.max.apply(null, data) * 1.2;
-    var stepX = cW / (data.length - 1);
-    var svg = '';
-    var steps = 4;
-    for (var s=0; s<=steps; s++) {
-      var y = pT + (cH/steps)*s;
-      var v = Math.round(mx - (mx/steps)*s);
-      svg += '<line x1="'+pL+'" x2="'+(W-pR)+'" y1="'+y+'" y2="'+y+'" stroke="#e5e7eb" stroke-width="1"/>';
-      svg += '<text x="'+(pL-8)+'" y="'+(y+4)+'" text-anchor="end" font-size="10" fill="#9ca3af" font-family="JetBrains Mono,monospace">'+v+'</text>';
-    }
-    var pts = [];
-    for (var i=0; i<data.length; i++) {
-      pts.push({ x: pL+i*stepX, y: pT+cH-(data[i]/mx)*cH, v: data[i] });
-    }
-    var area = 'M'+pts[0].x+','+(pT+cH);
-    for (var i=0; i<pts.length; i++) area += ' L'+pts[i].x+','+pts[i].y;
-    area += ' L'+pts[pts.length-1].x+','+(pT+cH)+' Z';
-    svg += '<path d="'+area+'" fill="'+fillColor+'"/>';
+  // ── RENDER ALL 3 AS BAR CHARTS ──
+  barChart('chart-demos', 'legend-demos', demosBooked, '#2563eb', '#dbeafe', 'Demos');
+  barChart('chart-content', 'legend-content', contentAssets, '#059669', '#d1fae5', 'Content');
+  barChart('chart-leads', 'legend-leads', leadsDelivered, '#d97706', '#fef3c7', 'Leads');
 
-    var line = 'M'+pts[0].x+','+pts[0].y;
-    for (var i=1; i<pts.length; i++) line += ' L'+pts[i].x+','+pts[i].y;
-    svg += '<path d="'+line+'" fill="none" stroke="'+color+'" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>';
-
-    for (var i=0; i<pts.length; i++) {
-      svg += '<circle cx="'+pts[i].x+'" cy="'+pts[i].y+'" r="4" fill="'+color+'" stroke="white" stroke-width="2"/>';
-      svg += '<text x="'+pts[i].x+'" y="'+(pts[i].y-10)+'" text-anchor="middle" font-size="11" font-weight="600" fill="'+color+'" font-family="JetBrains Mono,monospace">'+pts[i].v+'</text>';
-      svg += '<text x="'+pts[i].x+'" y="'+(H-8)+'" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="DM Sans,sans-serif">'+labels[i]+'</text>';
-    }
-    document.getElementById(id).innerHTML = '<svg viewBox="0 0 '+W+' '+H+'" class="chart-svg">'+svg+'</svg>';
-  }
-
-  barChart('chart-demos', demosBooked, '#2563eb', '#bfdbfe');
-  lineChart('chart-content', contentAssets, '#059669', 'rgba(5,150,105,0.08)');
-  lineChart('chart-leads', leadsDelivered, '#d97706', 'rgba(217,119,6,0.08)');
-
+  // ── TABLE ──
   var tbody = document.getElementById('tableBody');
-  var cumD = 0;
-  for (var i=0; i<labels.length; i++) {
-    cumD += demosBooked[i];
-    var cG = i>0 ? Math.round(((contentAssets[i]-contentAssets[i-1])/contentAssets[i-1])*100)+'%' : '\u2014';
-    var lG = i>0 && leadsDelivered[i-1]>0 ? Math.round(((leadsDelivered[i]-leadsDelivered[i-1])/leadsDelivered[i-1])*100)+'%' : '\u2014';
-    var hl = i===labels.length-1 ? 'highlight-row' : '';
-    tbody.innerHTML += '<tr class="'+hl+'"><td>'+labels[i]+'</td><td>'+demosBooked[i]+'</td><td>'+cumD+'</td><td class="'+(contentAssets[i]>(contentAssets[i-1]||0)?'trend-up':'')+'">'+contentAssets[i]+'</td><td class="'+(cG!=='\u2014'?'trend-up':'')+'">'+cG+'</td><td class="'+(leadsDelivered[i]>(leadsDelivered[i-1]||0)?'trend-up':'')+'">'+leadsDelivered[i]+'</td><td class="'+(lG!=='\u2014'?'trend-up':'')+'">'+lG+'</td></tr>';
+  for (var i = 0; i < labels.length; i++) {
+    var isProjected = i > currentWeekIndex;
+    var cG = i > 0 ? Math.round(((contentAssets[i] - contentAssets[i - 1]) / contentAssets[i - 1]) * 100) + '%' : '\u2014';
+    var lG = i > 0 && leadsDelivered[i - 1] > 0 ? Math.round(((leadsDelivered[i] - leadsDelivered[i - 1]) / leadsDelivered[i - 1]) * 100) + '%' : '\u2014';
+    var rowClass = isProjected ? 'projected-row' : '';
+
+    tbody.innerHTML += '<tr class="' + rowClass + '">' +
+      '<td>' + labels[i] + '</td>' +
+      '<td>' + demosBooked[i] + '</td>' +
+      '<td class="' + (contentAssets[i] > (contentAssets[i - 1] || 0) ? 'trend-up' : '') + '">' + contentAssets[i] + '</td>' +
+      '<td class="' + (cG !== '\u2014' ? 'trend-up' : '') + '">' + cG + '</td>' +
+      '<td class="' + (leadsDelivered[i] > (leadsDelivered[i - 1] || 0) ? 'trend-up' : '') + '">' + leadsDelivered[i] + '</td>' +
+      '<td class="' + (lG !== '\u2014' ? 'trend-up' : '') + '">' + lG + '</td>' +
+      '</tr>';
   }
 </script>
 </body>
